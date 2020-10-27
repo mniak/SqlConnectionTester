@@ -16,7 +16,8 @@ Indicates the name
 ### `TableName`
 Optional.
 Used only if `Query` is missing.
-The table name to use in order to build a c
+The table name to use in order to build a query.
+The default query is `SELECT TOP(1) 1 FROM <TableName>`.
 
 ### `Delay`
 Optional. Default value: `2000`.
@@ -26,13 +27,14 @@ Optional. Default value: `2000`.
 
 In bash:
 ```bash
-docker run \ 
+docker run \
   --env ConnectionString="Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;" \
   --env TableName="dbo.ExampleTable" \
   mniak/sqltest
 ```
 
 In powershell:
+```
 docker run `
   --env ConnectionString="Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;" `
   --env TableName="dbo.ExampleTable" `
