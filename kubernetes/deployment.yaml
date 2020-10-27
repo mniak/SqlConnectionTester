@@ -1,0 +1,15 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqltest
+spec:
+  template:
+    spec:
+      containers:
+        - name: sqltest
+          image: mniak/sqltest
+          env:
+            - name: ConnectionString
+              value: "Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;"
+            - name: TableName
+              value: "dbo.ExampleTable"
