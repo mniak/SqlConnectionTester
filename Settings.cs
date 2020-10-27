@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace SqlConnectionTester
+namespace SqlTest
 {
     public class Settings
     {
         public string ConnectionString { get; set; }
-        public string TableName { get; set; }
+        public string TableName { get; set; } = "Person.Person";
 
-        private string query = "Person.Person";
+        private string query;
         public string Query
         {
             get => query ?? $"SELECT TOP(1) 1 FROM {TableName}";

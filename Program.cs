@@ -7,7 +7,7 @@ using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace SqlConnectionTester
+namespace SqlTest
 {
     internal static class Program
     {
