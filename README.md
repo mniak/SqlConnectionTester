@@ -10,14 +10,15 @@ Required.
 The connection string to test.
 
 ### `Query`
-Optional. Default value: `Person.Person`.
-Indicates the name 
+Optional.
+The default query is `SELECT TOP(1) 1 FROM <TableName>`.
+If the `TableName` is missing, then `Query` is required.
 
 ### `TableName`
 Optional.
 Used only if `Query` is missing.
 The table name to use in order to build a query.
-The default query is `SELECT TOP(1) 1 FROM <TableName>`.
+Default value: `Person.Person`.
 
 ### `Delay`
 Optional. Default value: `2000`.
