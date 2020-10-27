@@ -17,13 +17,14 @@ namespace SqlTest
                 .AddEnvironmentVariables()
                 .Build();
 
+            var logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Console(standardErrorFromLevel: LogEventLevel.Error)
+               .CreateLogger();
+
             var settings = new Settings();
             config.Bind(settings);
             settings.ThrowExceptionIfInvalid();
-
-            var logger = new LoggerConfiguration()
-               .WriteTo.Console(LogEventLevel.Verbose)
-               .CreateLogger();
 
             while (true)
             {

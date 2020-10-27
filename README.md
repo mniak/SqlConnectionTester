@@ -3,8 +3,7 @@ SQL Test
 
 Create a container to test a SQL connection
 
-Environment variables
-
+## Environment variables
 
 ### `ConnectionString`
 Required.
@@ -21,3 +20,21 @@ The table name to use in order to build a c
 
 ### `Delay`
 Optional. Default value: `2000`.
+
+
+## Example
+
+In bash:
+```bash
+docker run \ 
+  --env ConnectionString="Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;" \
+  --env TableName="dbo.ExampleTable" \
+  mniak/sqltest
+```
+
+In powershell:
+docker run `
+  --env ConnectionString="Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;" `
+  --env TableName="dbo.ExampleTable" `
+  mniak/sqltest
+```
